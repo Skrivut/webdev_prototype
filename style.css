@@ -1,7 +1,7 @@
-/* --- Default Theme (Dark Mode) --- */
+/* --- Global & Base Styles --- */
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: #000; /* Default Dark Mode Background */
+    color: #fff;            /* Default Dark Mode Text */
     
     margin: 0;
     padding: 20px;
@@ -10,7 +10,7 @@ body {
     align-items: center;
     min-height: 100vh;
     
-    /* Added transition for smooth theme changes */
+    /* Smooth transition for theme changes */
     transition: background-color 0.5s, color 0.5s;
 }
 
@@ -21,16 +21,17 @@ body {
     margin-bottom: 40px;
 }
 
+/* Header Button (Shared Base Styles) */
 .header-button {
-    background-color: #000;
-    border: 2px solid #fff;
+    background-color: #000; /* Dark Mode Default */
+    border: 2px solid #fff; /* Dark Mode Default */
     padding: 10px 20px;
     text-decoration: none;
-    color: #fff;
+    color: #fff; /* Dark Mode Default */
     display: flex;
     align-items: center;
     gap: 5px;
-    transition: background-color 0.3s, transform 0.3s, border-color 0.3s, color 0.3s; /* Updated transition */
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s, color 0.3s;
     font-size: 1.2em;
 }
 
@@ -66,7 +67,36 @@ body {
     "YELA" 0;
 }
 
-/* Portfolio Containers (Dark Mode) */
+/* --- Corner Button Positioning and Size --- */
+
+/* Positioning for Home Button (Upper Left) */
+.home-corner-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    padding: 5px 10px;
+    font-size: 0.8em; /* Overrides .header-button font-size */
+}
+
+/* Positioning for Theme Toggle Button (Upper Right) */
+.theme-corner-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 5px 10px;
+    font-size: 0.8em; /* Overrides .header-button font-size */
+}
+
+/* Size for text inside small corner buttons */
+.home-corner-button .button-text,
+.theme-corner-button .button-text {
+    font-size: large; /* Reduced from x-large */
+}
+
+
+/* --- Dark Mode Default Styles (Portfolio Containers) --- */
 .portfolio-container,
 .portfolio-container2nd {
     width: 130%;
@@ -74,7 +104,7 @@ body {
     background-color: #1a1a1a;
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
     overflow: hidden;
-    transition: background-color 0.5s, border-color 0.5s, box-shadow 0.5s; /* Added transition */
+    transition: background-color 0.5s, border-color 0.5s, box-shadow 0.5s;
 }
 
 /* Portfolio Headers (Dark Mode) */
@@ -84,10 +114,11 @@ body {
     padding: 10px;
     text-align: center;
     border-bottom: 2px solid #fff;
-    transition: background-color 0.5s, border-color 0.5s; /* Added transition */
+    transition: background-color 0.5s, border-color 0.5s;
 }
 
 
+/* --- Portfolio Content Layout --- */
 .portfolio-content {
     position: relative;
     padding-top: 56.25%; 
@@ -119,6 +150,7 @@ body {
     height: 80%;
 }
 
+/* Social Links (Dark Mode Default) */
 .social-links {
     display: flex;
     justify-content: center; 
@@ -151,9 +183,9 @@ footer {
     margin-top: auto;
     padding: 20px;
     text-align: center;
-    border-top: 1px solid #444;
+    border-top: 1px solid #444; /* Dark Mode Default */
     width: 100%;
-    transition: border-top-color 0.5s; /* Added transition */
+    transition: border-top-color 0.5s;
 }
 
 
@@ -167,7 +199,7 @@ footer {
     color: #333;               /* Dark text */
 }
 
-/* Header Buttons */
+/* Header Buttons (Navigation and Corner) */
 .light-mode .header-button {
     background-color: #ddd; 
     border: 2px solid #333;
@@ -178,18 +210,31 @@ footer {
     background-color: #ccc;
 }
 
+/* Corner Button Specific Overrides (Home and Theme Toggle) */
+.light-mode .home-corner-button,
+.light-mode .theme-corner-button {
+    background-color: #ddd; 
+    border: 2px solid #333;
+    color: #333;
+}
+
+.light-mode .home-corner-button:hover,
+.light-mode .theme-corner-button:hover {
+    background-color: #ccc;
+}
+
 /* Portfolio Containers */
 .light-mode .portfolio-container,
 .light-mode .portfolio-container2nd {
-    background-color: #ffffff; /* White container background */
+    background-color: #ffffff;
     border: 2px solid #333;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Darker shadow for visibility */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Portfolio Headers */
 .light-mode .portfolio-header,
 .light-mode .portfolio-2nd {
-    background-color: #e0e0e0; /* Light gray header */
+    background-color: #e0e0e0;
     border-bottom: 2px solid #333;
     color: #333;
 }
